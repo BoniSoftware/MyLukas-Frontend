@@ -1,0 +1,117 @@
+
+body {
+    background-color: rgb(205, 205, 205);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    align-items: center;
+    width: 75rem;
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: rgb(19, 247, 140); 
+    justify-content: space-between;
+    text-align: right;
+}  
+header nav button {
+    font-size: 20px;
+    text-align: left;
+    cursor: grab;
+    bottom: 10px;
+}
+header div{
+flex: 1;  
+text-align: right;
+} 
+.logoAdmin {
+  width: 50px;
+  height: 50px;
+}
+.logoUsuario {
+  width: 50px;
+  height: 50px;
+}
+.logoFoto {
+  width: 60px;
+  height: 50px;
+}
+main {
+    text-align: center;
+}
+
+.logoMix2 {
+  width: 355px;
+  height: 245px;
+}
+.logoMix3 {
+  width: 365px;
+  height: 255px;
+}
+.logoEntradas {
+  width: 215px;
+  height: 160px;
+}
+.logoSalidas {
+  width: 210px;
+  height: 160px;
+}
+.logoCalendario {
+  width: 210px;
+  height: 160px;
+}
+.logoPagos {
+  width: 210px;
+  height: 160px;
+} 
+main nav{
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}  
+main ul{
+  display: flex;
+  gap: 2.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+} 
+main div label {
+    padding: 1.5rem; 
+    font-size: 1.2rem;
+}                                                                
+main ul button {
+    font-size: 1.5rem;
+    background-color: rgb(19, 247, 140);
+    cursor: grab; 
+}
+main div button {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    background-color: rgb(19, 247, 140);
+    cursor: grab;
+}
+footer {
+    display: flex;
+    align-items: center;
+    width: 97%;
+    padding-left: 1%;
+    padding-right: 1%;
+    justify-content: space-between;
+    background-color: rgb(19, 247, 140);
+}
+footer nav {
+  text-align: left;
+ 
+}
+footer div {
+  text-align: right;
+  flex: 1;
+}
+.logoBONIsoft {
+  width: 100px;
+  height: 50px;
+}
+ 

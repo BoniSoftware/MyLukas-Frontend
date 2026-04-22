@@ -1,0 +1,14 @@
+
+.logoMix2 {
+  width: auto;
+  height: auto;
+}
+.containerRegistro {
+display: flex;
+grid-template-columns: 1fr 1fr;
+gap: 100px;
+align-items: center;
+padding: 48px 300px ;
+}
+
+
