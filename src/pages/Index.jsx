@@ -1,14 +1,11 @@
-import LogoMix1 from "../assets/Mix.jpg";
-import "../styles/login.css";
+
+import Carousel from "../components/Carousel";
+import "../styles/index.css";
 
 function Index() {
   return (
     <>
-      <div className="logo-container">
-        <p>
-          <img src={LogoMix1} alt="Logo" className="LogoMix1" />
-        </p>
-      </div>
+      <Carousel/>
     </>
   );
 }

@@ -23,11 +23,11 @@ function Carousel() {
   return (
     <div className="carousel">
       <button className="btn prev" onClick={prevSlide}>❮</button>
-      <div className="image-container">
-        <h2>{slides[index].titulo}</h2>
-        <img src={slides[index].img} alt="carousel" className="image" />
-        <p>{slides[index].texto}</p>
-      </div>
+        <div className="image-container">
+            <h2>{slides[index].titulo}</h2>
+            <img src={slides[index].img} alt="carousel" className="image" />
+            <p>{slides[index].texto}</p>
+        </div>
         <button className="btn next" onClick={nextSlide}>❯</button>
       <div className="dots">
         {slides.map((_, i) => (

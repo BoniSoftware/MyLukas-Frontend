@@ -1,11 +1,11 @@
 
-import Carousel from "../components/Carousel";
-import "../styles/home.css";
+import Homecarrusel from "../components/Homecarrusel";
+import "../styles/homecarrusel.css";
 
 function Home() {
   return (
       <>
-        <Carousel />
+        <Homecarrusel />
     </>
   );
 }
