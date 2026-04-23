@@ -6,9 +6,6 @@ import Index from "./pages/Index";
 import Login from "./pages/Login"; 
 import Registro from "./pages/Registro";
 import Home from "./pages/Home";
-import Carousel from "./pages/Carousel";
-
-
 
 function App() {
   return (
@@ -20,7 +17,6 @@ function App() {
           <Route path="/index" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Registro />} />
-          <Route path="/carousel" element={<Carousel />} />
         </Routes>
         <Footer />
       </div>
