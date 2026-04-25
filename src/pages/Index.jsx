@@ -1,11 +1,11 @@
 
-import Carousel from "../components/Carousel";
+import IndexCarrusel from "../components/Indexcarrusel";
 import "../styles/index.css";
 
 function Index() {
   return (
     <>
-      <Carousel/>
+      <IndexCarrusel/>
     </>
   );
 }

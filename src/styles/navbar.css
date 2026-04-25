@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%;
+    background-color: rgb(19, 247, 140); 
+    border-bottom: 1px solid rgb(205, 205, 205);
+    padding-left: 2%;
+    padding-right: 2%;
+}  
+.nav {
+    display: flex;
+    gap: 5px;
+}
+.btn-outline {
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: 1.5px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+.btn-outline:hover {
+    background-color: #ccc;
+    color: #000000;
+}
+.btn-dark  {
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: 1.5px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+.btn-dark:hover {
+    background-color: #ccc;
+    color: #000000;
+}
+.Usuario {
+  width: 45px;
+  height: 45px;
+}
+.brand  {
+    font-size: 18px;
+    font-weight: 600;
+}

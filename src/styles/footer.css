@@ -1,12 +1,9 @@
 footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 97%;
     background-color: rgb(19, 247, 140); 
     padding-left: 1%;
     padding-right: 1%;
-    text-align: center;
 } 
 footer div {
   text-align: right;

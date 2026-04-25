@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "../styles/carousel.css";
+import "../styles/indexcarrusel.css";
 
 import img1 from "../assets/Entradas.jpg";
 import img2 from "../assets/Salidas.jpg";
 import img3 from "../assets/Pagos.jpg";
 import img4 from "../assets/Calendario.jpg";
 
-function Carousel() {
+function Indexcarrusel() {
   const slides = [
     { img: img1, titulo: "Modulo Entradas", texto: "Registro de ingresos" },
     { img: img2, titulo: "Modulo Salidas", texto: "Registro de salidas y Control de gastos" },
@@ -21,13 +21,15 @@ function Carousel() {
     setIndex(index === slides.length - 1 ? 0 : index + 1);
   };
   return (
-    <div className="carousel">
-      <button className="btn prev" onClick={prevSlide}>❮</button>
+    <div className="indexcarrusel">
         <div className="image-container">
-            <h2>{slides[index].titulo}</h2>
-            <img src={slides[index].img} alt="carousel" className="image" />
-            <p>{slides[index].texto}</p>
+            <img src={slides[index].img} alt="carrusel" className="indexcarrusel-image" />
+            <div className="texto-linea">
+              <h2>{slides[index].titulo}</h2>
+              <p>{slides[index].texto}</p>
+            </div>
         </div>
+        <button className="btn prev" onClick={prevSlide}>❮</button>
         <button className="btn next" onClick={nextSlide}>❯</button>
       <div className="dots">
         {slides.map((_, i) => (
@@ -42,4 +44,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default Indexcarrusel;

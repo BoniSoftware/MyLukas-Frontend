@@ -27,31 +27,33 @@ function Homecarrusel() {
     setIndex(index === slides.length - 1 ? 0 : index + 1);
   };
   return (
-    <><p /><div className="carousel">
-      <button className="btn prev" onClick={prevSlide}>❮</button>
+    <><p /><div className="homecarrusel">  
+
         {/* CONTENIDO EN COLUMNAS */}
         <div className="slide-content">
+
           {/* TEXTO */}
           <div className="col text-col">
             <h2>{slides[index].titulo}</h2>
             <p>{slides[index].texto}</p>
           </div>
+
           {/* IMAGEN */}
           <div className="col image-col">
-            <img src={slides[index].img} alt="carousel" className="image" />
+            <img src={slides[index].img} alt="carrusel" className="homecarrusel-image" />
           </div>
         </div>
-      <button className="btn next" onClick={nextSlide}>❯</button>
-      <div className="dots">
-        {slides.map((_, i) => (
-          <span
-            key={i}
-            className={i === index ? "dot active" : "dot"}
-            onClick={() => setIndex(i)}
-          ></span>
-        ))}
-      </div>
-
+          <button className="btn prev" onClick={prevSlide}>❮</button>
+          <button className="btn next" onClick={nextSlide}>❯</button>
+        <div className="dots">
+          {slides.map((_, i) => (
+            <span
+              key={i}
+              className={i === index ? "dot active" : "dot"}
+              onClick={() => setIndex(i)}
+            ></span>
+          ))}
+        </div>
     </div></>
   );
 }

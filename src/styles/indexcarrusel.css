@@ -1,0 +1,62 @@
+.indexcarrusel {
+  position: relative;
+  width: 600px;
+  margin: auto;
+  text-align: center; 
+}
+.indexcarrusel-image {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+  min-height: 47vh; /* altura mínima para mantener la proporción */
+  padding: 20px; /* espacio alrededor del texto */
+  margin-top: 10px; /* aumenta el espacio arriba */
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.dots {
+  margin-top: 10px;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background: black;
+}
+.texto-linea {
+  display: flex;
+  text-align: center;
+  align-items: center; /* alinea vertical */
+  justify-content: center; /* centra horizontalmente */
+  gap: 30px; /* espacio entre título y texto */
+}
+.texto-linea h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.texto-linea p {
+  margin: 0;
+}
