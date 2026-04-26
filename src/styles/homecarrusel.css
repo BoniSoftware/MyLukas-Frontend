@@ -2,27 +2,23 @@
 .slide-content {
   display: flex;
   align-items: center;
+  padding: 1.2% 10%;
 }
 .image-col {
   flex: 1;
-  padding: 10px;
+}
+.text-col h2 {
+  text-align: center;
 }
 .text-col {
   flex: 1;
-  padding: 10px;
+  text-align: justify;
 }
 .button-col {
   flex: 1;
 }
 .homecarrusel-image {
-  width: 60%;
-  height: 60%;
-  object-fit: cover;
+  width: 80%;
+  height: 300px;
   overflow: hidden;
-  border-radius: 10px;
-  min-height: 47vh; /* altura mínima para mantener la proporción */
-  padding: 20px; /* espacio alrededor del texto */
-  margin-top: 10px; /* aumenta el espacio arriba */
 }
-
-  

@@ -11,8 +11,8 @@
   overflow: hidden;
   border-radius: 10px;
   min-height: 47vh; /* altura mínima para mantener la proporción */
-  padding: 20px; /* espacio alrededor del texto */
-  margin-top: 10px; /* aumenta el espacio arriba */
+  padding: 10px; /* espacio alrededor del texto */
+  margin-top: 15px; /* aumenta el espacio arriba */
 }
 .btn {
   position: absolute;

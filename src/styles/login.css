@@ -1,6 +1,7 @@
 
-.logoMix1 {
-  width: auto;
-  height: auto;
-  padding: 0px 500px;
+.logo-container img {
+  margin-top: 0px; /* aumenta el espacio arriba */
+}
+.container div {
+  padding: 0.18%;
 }

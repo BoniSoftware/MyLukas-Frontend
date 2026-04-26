@@ -1,14 +1,14 @@
 
-.logoMix2 {
-  width: auto;
-  height: auto;
-}
 .containerRegistro {
 display: flex;
-grid-template-columns: 1fr 1fr;
-gap: 100px;
-align-items: center;
-padding: 48px 300px ;
+padding: 3.35% 15%;
 }
-
+.containerRegistro img {
+  min-height: 50vh; /* altura mínima para mantener la proporción */
+}
+.containerRegistro div {
+  flex: 1;
+  text-align: center;
+  padding: 1%;
+}
 
