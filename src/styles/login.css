@@ -1,6 +1,8 @@
 
 .logo-container img {
-  margin-top: 0px; /* aumenta el espacio arriba */
+  width: 21.9%;
+  height: auto;
+  margin-top: 10px; /* aumenta el espacio arriba */
 }
 .container div {
   padding: 0.18%;
