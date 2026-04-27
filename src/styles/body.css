@@ -2,6 +2,5 @@ body {
     background-color: rgb(205, 205, 205);
     font-family: comic sans ms, cursive, sans-serif;
     text-align: center;
-    min-height: 100vh;
-    padding: 1% 1%;
+    padding: 0% 1%;
 } 

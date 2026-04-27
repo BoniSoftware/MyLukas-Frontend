@@ -20,28 +20,40 @@ function Indexcarrusel() {
   const nextSlide = () => {
     setIndex(index === slides.length - 1 ? 0 : index + 1);
   };
-  return (
-    <div className="indexcarrusel">
-        <div className="image-container">
-            <img src={slides[index].img} alt="carrusel" className="indexcarrusel-image" />
-            <div className="texto-linea">
-              <h2>{slides[index].titulo}</h2>
-              <p>{slides[index].texto}</p>
-            </div>
-        </div>
+  const prevIndex = index === 0 ? slides.length - 1 : index - 1;
+  const nextIndex = index === slides.length - 1 ? 0 : index + 1;
+
+return (
+  <div className="indexcarrusel">
+    <div className="texto-linea">
+      <h2>{slides[index].titulo}</h2>
+      <p>{slides[index].texto}</p>
+    </div>
+
+    <div className="layout">
+      {/* IZQUIERDA */}
+      <img  src={slides[prevIndex].img}  alt="prev" className="side" onClick={prevSlide}/>
+      {/* CENTRO */}
+      <div className="image-container">
+        <img src={slides[index].img} alt="actual" className="indexcarrusel-image"/>
         <button className="btn prev" onClick={prevSlide}>❮</button>
         <button className="btn next" onClick={nextSlide}>❯</button>
-      <div className="dots">
-        {slides.map((_, i) => (
-          <span
-            key={i}
-            className={i === index ? "dot active" : "dot"}
-            onClick={() => setIndex(i)}
-          ></span>
-        ))}
       </div>
+      {/* DERECHA */}
+      <img  src={slides[nextIndex].img}  alt="next" className="side" onClick={nextSlide}/>
     </div>
-  );
+
+    <div className="dots">
+      {slides.map((_, i) => (
+        <span
+          key={i}
+          className={i === index ? "dot active" : "dot"}
+          onClick={() => setIndex(i)}
+        ></span>
+      ))}
+    </div>
+  </div>
+);
 }
 
 export default Indexcarrusel;

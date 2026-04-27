@@ -1,21 +1,35 @@
-.indexcarrusel {
-  position: relative;
-  width: 600px;
-  margin: auto;
-  text-align: center; 
-}
+
 .indexcarrusel-image {
-  width: 60%;
-  height: 60%;
-  object-fit: cover;
-  overflow: hidden;
-  border-radius: 10px;
-  min-height: 47vh; /* altura mínima para mantener la proporción */
-  padding: 10px; /* espacio alrededor del texto */
-  margin-top: 15px; /* aumenta el espacio arriba */
+  width: 67vh;
+height: auto;
+  text-align: center; 
+  position: relative;
+ min-height: 51vh; /* altura mínima para mantener la proporción */}
+
+/* IMAGEN */
+.image-container {
+  position: relative;
+  text-align: center;
 }
+/* MINIATURAS A LOS LADOS */
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+}
+/* MINIATURAS */
+.thumb {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* ACTIVA */
+
+/* BOTONES */
 .btn {
-  position: absolute;
+ position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
@@ -23,16 +37,38 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+  font-size: 10px;  
+}
+
+.prev { left: 0px; }
+.next { right: 0px; }
+
+.layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.side {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.texto-linea {
+  display: flex;
+  align-items: center; /* alinea vertical */
+  justify-content: center; /* centra horizontalmente */
+  gap: 30px; /* espacio entre título y texto */
+}
+.texto-linea h2 {
+  margin: 0;
   font-size: 20px;
 }
-.prev {
-  left: 10px;
-}
-.next {
-  right: 10px;
-}
 .dots {
-  margin-top: 10px;
+  margin-top: 1px;
 }
 .dot {
   display: inline-block;
@@ -44,19 +80,5 @@
   cursor: pointer;
 }
 .dot.active {
-  background: black;
-}
-.texto-linea {
-  display: flex;
-  text-align: center;
-  align-items: center; /* alinea vertical */
-  justify-content: center; /* centra horizontalmente */
-  gap: 30px; /* espacio entre título y texto */
-}
-.texto-linea h2 {
-  margin: 0;
-  font-size: 20px;
-}
-.texto-linea p {
-  margin: 0;
+  background: rgb(19, 247, 140); 
 }

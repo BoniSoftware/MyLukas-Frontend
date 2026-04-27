@@ -1,8 +1,8 @@
 
 .containerRegistro {
   display: flex;
-  align-items: center;       /* centra verticalmente */
-  padding: 0% 15%;
+  align-items: center;  /* centra verticalmente */
+  padding: 0.24% 15%;
 }
 .containerRegistro img {
   width: 110%;
