@@ -1,11 +1,12 @@
 
 .indexcarrusel-image {
-  width: 67vh;
-height: auto;
+  width: 77.3vh;
+  height: auto;
   text-align: center; 
   position: relative;
- min-height: 51vh; /* altura mínima para mantener la proporción */}
-
+  min-height: 51vh; /* altura mínima para mantener la proporción */
+  border-radius: 40px; /* bordes redondeados */
+}
 /* IMAGEN */
 .image-container {
   position: relative;
@@ -24,9 +25,8 @@ height: auto;
   opacity: 0.5;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 20px; /* bordes redondeados */
 }
-/* ACTIVA */
-
 /* BOTONES */
 .btn {
  position: absolute;
@@ -39,17 +39,16 @@ height: auto;
   cursor: pointer;
   font-size: 10px;  
 }
-
-.prev { left: 0px; }
-.next { right: 0px; }
-
+.prev { left: 0px; 
+}
+.next { right: 0px; 
+}
 .layout {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-
 .side {
   width: 120px;
   height: 80px;

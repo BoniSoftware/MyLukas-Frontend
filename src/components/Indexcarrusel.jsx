@@ -8,10 +8,10 @@ import img4 from "../assets/Calendario.jpg";
 
 function Indexcarrusel() {
   const slides = [
-    { img: img1, titulo: "Modulo Entradas:", texto: "Registro de ingresos" },
-    { img: img2, titulo: "Modulo Salidas:", texto: "Registro de salidas y Control de gastos" },
-    { img: img3, titulo: "Modulo Pagos:", texto: "Gestión de pagos en línea" },
-    { img: img4, titulo: "Modulo Calendario:", texto: "Organiza tus fechas de pagos" }
+    { img: img1, titulo: "Entradas:", texto: "Registro de ingresos" },
+    { img: img2, titulo: "Salidas:", texto: "Registro de salidas y Control de gastos" },
+    { img: img3, titulo: "Pagos Electronicos:", texto: "Gestión de pagos en línea" },
+    { img: img4, titulo: "Calendario:", texto: "Organiza tus fechas de pagos" }
   ];
   const [index, setIndex] = useState(0);
   const prevSlide = () => {

@@ -21,4 +21,5 @@
   width: 80%;
   height: 300px;
   overflow: hidden;
+  border-radius: 40px; /* bordes redondeados */
 }
