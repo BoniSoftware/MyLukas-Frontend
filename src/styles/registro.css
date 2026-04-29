@@ -14,3 +14,9 @@
   padding: 1%;
   justify-content: right
 }
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
