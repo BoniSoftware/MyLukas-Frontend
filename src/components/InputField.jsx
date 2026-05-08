@@ -1,10 +1,24 @@
-function InputField({label, type, placeholder}) {
-    return (
-        <div className="input-group">
-            <label>{label}</label>
-            <input type={type} placeholder={placeholder} />
-        </div>
-    );
+function InputField({
+  label,
+  type,
+  name,
+  value,
+  onChange,
+  placeholder
+}) {
+    
+  return (
+    <div className="input-group">
+      <label>{label}</label>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
+    </div>
+  );
 }
 
 export default InputField;

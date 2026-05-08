@@ -1,9 +1,12 @@
 
-.logo-container img {
+.containerLogin {
+  align-items: center;  /* centra verticalmente */
+}
+.containerLogin img {
   width: 22.7%;
   height: auto;
-  margin-top: 10px; /* aumenta el espacio arriba */
+  margin-top: 5px; /* aumenta el espacio arriba */
 }
-.container div {
-  padding: 0.18%;
+.containerLogin div {
+ padding: 0.09%;
 }
