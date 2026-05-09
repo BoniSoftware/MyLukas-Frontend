@@ -11,7 +11,7 @@ import Soporte from "./pages/Soporte";
 function App() {
   return (
     <BrowserRouter>
-      <Body/>
+       <Body/>
        <Navbar/>
           <Routes>
             <Route path="/home" element={<Home />} />  

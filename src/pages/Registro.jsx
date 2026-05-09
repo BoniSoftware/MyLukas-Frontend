@@ -75,7 +75,7 @@ function Registro() {
 
         // Redirección
         setTimeout(() => {
-          navigate("/login");
+          navigate("/Registro");
         }, 1500);
       } else {
         alert(data.error || "Error en el registro");

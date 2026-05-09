@@ -1,6 +1,11 @@
+
 body {
-    background-color: rgb(205, 205, 205);
-    font-family: comic sans ms, cursive, sans-serif;
-    text-align: center;
-    padding: 0% 1%;
-} 
+  background-color: rgb(205, 205, 205);    /* Estilos globales de toda la página */
+  font-family: comic sans ms, cursive, sans-serif;
+  text-align: center;
+  padding: 0% 1%;
+}
+
+.body {
+    margin: 0    /* Estilos SOLO del componente Body */
+}

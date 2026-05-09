@@ -1,12 +1,17 @@
 
 .containerLogin {
-  align-items: center;  /* centra verticalmente */
+  justify-content: center;
+  align-items: center;   /* centra verticalmente */
+  gap: 40px;
 }
 .containerLogin img {
   width: 22.7%;
   height: auto;
   margin-top: 5px; /* aumenta el espacio arriba */
 }
-.containerLogin div {
- padding: 0.02%;
+.card {
+  padding: 1px;
 }
+
+
+
