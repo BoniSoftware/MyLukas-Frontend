@@ -1,3 +1,5 @@
+import "../styles/inputfield.css";
+
 function InputField({
   label,
   type,
@@ -6,7 +8,7 @@ function InputField({
   onChange,
   placeholder
 }) {
-    
+
   return (
     <div className="input-group">
       <label>{label}</label>
