@@ -1,22 +1,44 @@
-
 .containerRegistro {
   display: flex;
   align-items: center;  /* centra verticalmente */
-  padding: 0.24% 15%;
+  padding: 1.43% 2%;
 }
 .containerRegistro img {
+  flex: 1;
   width: 110%;
   height: auto;
-  flex: 1;
 }
 .containerRegistro div {
   flex: 1;
   padding: 1%;
   justify-content: right
 }
-.error {
-  color: red;
-  font-size: 12px;
-  margin-top: -8px;
-  margin-bottom: 10px;
+.usuarios-container{
+  flex: 1;
+
 }
+.card-user{
+  background: rgba(255, 255, 255, 0.856);
+
+  margin: 5px 0;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.btn-editar{
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-eliminar{
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+

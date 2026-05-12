@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoMix2 from "../assets/Mix.jpg";
 import InputField from "../components/InputField";
@@ -8,6 +8,9 @@ import "../styles/registro.css";
 function Registro() {
 
   const navigate = useNavigate();
+
+  // ESTADOS
+  const [usuarios, setUsuarios] = useState([]);
 
   const [form, setForm] = useState({
     name: "",
@@ -19,49 +22,62 @@ function Registro() {
   });
 
   const [aceptaTerminos, setAceptaTerminos] = useState(false);
+  const [editando, setEditando] = useState(false);
+  const [usuarioId, setUsuarioId] = useState(null);
 
-  // Actualizar inputs
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
+  // OBTENER USUARIOS
+  const obtenerUsuarios = async () => {
+    try {const res = await fetch("http://localhost:8000/api/users");
+      const data = await res.json();
+      setUsuarios(data);
+    } catch (error) {console.error(error);}
   };
 
-  // Enviar formulario
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // CARGAR USUARIOS
+  useEffect(() => {obtenerUsuarios();}, []);
 
-    // Validar contraseñas
-    if (form.password !== form.confirmPassword) {
-      alert("Las contraseñas no coinciden");
+  // ACTUALIZAR INPUTS
+  const handleChange = (e) => {setForm({...form, [e.target.name]: e.target.value});
+  };
+
+  // ENVIAR FORMULARIO
+  const handleSubmit = async (e) => {e.preventDefault();
+
+    // VALIDAR CONTRASEÑAS
+    if (form.password !== form.confirmPassword) {alert("Las contraseñas no coinciden");
       return;
     }
 
-    // Validar términos
-    if (!aceptaTerminos) {
-      alert("Debes aceptar los términos");
+    // VALIDAR TERMINOS
+    if (!aceptaTerminos) {alert("Debes aceptar los términos");
       return;
     }
 
     try {
-      const res = await fetch(
-        "http://localhost:8000/api/users/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(form)
-        }
-      );
+      let res;
+
+      // ACTUALIZAR
+      if (editando) {res = await fetch(`http://localhost:8000/api/users/${usuarioId}`,
+          {method: "PUT", headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(form)}
+        );
+      } else {
+
+        // REGISTRAR
+        res = await fetch("http://localhost:8000/api/users/register",
+          {method: "POST", headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(form)}
+        );
+      }
 
       const data = await res.json();
+      if (res.ok) {alert(data.message ||
+          (editando
+            ? "Usuario actualizado correctamente"
+            : "Usuario registrado correctamente")
+        );
 
-      if (res.ok) {
-        alert(data.message || "Registro exitoso");
-
-        // Limpiar formulario
+        // LIMPIAR FORMULARIO
         setForm({
           name: "",
           second_name: "",
@@ -72,33 +88,66 @@ function Registro() {
         });
 
         setAceptaTerminos(false);
+        setEditando(false);
+        setUsuarioId(null);
 
-        // Redirección
+        // RECARGAR USUARIOS
+        obtenerUsuarios();
+
+        // REDIRECCION
         setTimeout(() => {
           navigate("/Registro");
         }, 1500);
-      } else {
-        alert(data.error || "Error en el registro");
-      }
+
+      } else {alert(data.error || "Error en el proceso");}
+
     } catch (error) {
-      console.error(error);
-      alert("Error de conexión con el servidor");
+      console.error(error); alert("Error de conexión con el servidor");
     }
+  };
+
+  // ELIMINAR USUARIO
+  const eliminarUsuario = async (id) => {
+    const confirmar = window.confirm(
+      "¿Eliminar usuario?"
+    );
+    if (!confirmar) return;
+    try {await fetch(`http://localhost:8000/api/users/${id}`,
+        {method: "DELETE"}
+      );
+      obtenerUsuarios();
+    } catch (error) {console.error(error);}
+  };
+
+  // EDITAR USUARIO
+  const editarUsuario = (usuario) => {
+    setForm({
+      name: usuario.name,
+      second_name: usuario.second_name,
+      id: usuario.id,
+      email: usuario.email,
+      password: "",
+      confirmPassword: ""
+    });
+
+    setUsuarioId(usuario._id);
+    setEditando(true);
+    setAceptaTerminos(true);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
 
   return (
     <div className="containerRegistro">
 
-      {/* Imagen */}
+      {/* IMAGEN */}
       <div className="col">
-        <img
-          src={LogoMix2}
-          alt="Logo"
-          className="LogoMix2"
-        />
+        <img src={LogoMix2} alt="Logo" className="LogoMix2"/>
       </div>
 
-      {/* Formulario */}
+      {/* FORMULARIO */}
       <div className="card">
         <form onSubmit={handleSubmit}>
           <InputField
@@ -150,31 +199,48 @@ function Registro() {
             placeholder="Confirme contraseña"
           />
 
-          {/* Checkbox */}
-          <p>
-            <label htmlFor="terminos">
-              Acepta términos y condiciones
-            </label>
+          {/* CHECKBOX */}
+          <p><label htmlFor="terminos"> Acepta términos y condiciones </label>
             <input
               id="terminos"
               type="checkbox"
               checked={aceptaTerminos}
               onChange={(e) =>
                 setAceptaTerminos(e.target.checked)
-              }
-            />
-          </p>
+              }/></p>
 
-          {/* Botón */}
+          {/* BOTON */}
           <Button
             type="submit"
-            text="Registrar Usuario"
-            disabled={!aceptaTerminos}
-          />
+            text={
+              editando
+                ? "Actualizar Usuario"
+                : "Registrar Usuario"
+            }disabled={!aceptaTerminos}/>
         </form>
       </div>
+
+      {/* LISTADO DE USUARIOS */}
+      <div className="usuarios-container">
+        <h3>Usuarios Registrados</h3>
+        {usuarios.map((usuario) => (
+          <div
+              key={usuario._id}
+              className="card-user"
+            ><div>{usuario.name} {usuario.second_name} - ID: {usuario.id}</div>
+            <button className="btn-editar"
+                onClick={() => editarUsuario(usuario)}
+                >Editar</button>
+            <button className="btn-eliminar"
+                onClick={() => eliminarUsuario(usuario._id)}
+                >Eliminar</button>
+          </div>
+        ))}
+      </div>  
     </div>
   );
 }
 
 export default Registro;
+
+

@@ -31,17 +31,21 @@ function Indexcarrusel() {
 
   return (
     <div className="indexcarrusel">
+
       {/* TEXTO */}
       <div className="texto-linea">
         <h2>{slides[index].titulo}</h2>
         <p>{slides[index].texto}</p>
       </div>
+
       {/* CARRUSEL */}
       <div className="layout">
+
         {/* IZQUIERDA */}
         <img
           src={slides[prevIndex].img}  alt="prev" className="side"
         />
+
         {/* CENTRO */}
         <div className="image-container">
           <img
@@ -53,11 +57,13 @@ function Indexcarrusel() {
           <button className="btn prev" onClick={prevSlide}> ❮ </button>
           <button className="btn next" onClick={nextSlide}> ❯ </button>
         </div>
+
         {/* DERECHA */}
         <img
           src={slides[nextIndex].img}  alt="next" className="side"
         />
       </div>
+      
       {/* DOTS */}
       <div className="dots">
         {slides.map((_, i) => (

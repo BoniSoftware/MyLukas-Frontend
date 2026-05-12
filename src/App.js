@@ -8,6 +8,7 @@ import Registro from "./pages/Registro";
 import Home from "./pages/Home";
 import Soporte from "./pages/Soporte";
 
+
 function App() {
   return (
     <BrowserRouter>
