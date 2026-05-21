@@ -73,7 +73,7 @@ function Login() {
         <form onSubmit={handleSubmit}>
           <InputField
             label="Documento de Identidad :"
-            type="text"
+            type="number"
             name="id"
             value={form.id}
             onChange={handleChange}

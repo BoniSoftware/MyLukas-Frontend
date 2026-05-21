@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Registro from "./pages/Registro";
 import Index from "./pages/Index";
 import Entradas from "./pages/Entradas";
+import Salidas from "./pages/Salidas";
 import Soporte from "./pages/Soporte";
 
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/registro" element={<Registro />} />
             <Route path="/index" element={<Index />} />
             <Route path="/entradas" element={<Entradas />} />
+            <Route path="/salidas" element={<Salidas />} />
             <Route path="/soporte" element={<Soporte />} />
           </Routes>
         <Footer/>

@@ -5,13 +5,13 @@ import Usuario from "../assets/Usuario.jpg";
 function Navbar () {
 
     const location = useLocation();
-
     const titulo = {
         "/home": "MODULO - Pagina Principal",
         "/login": "MODULO - Inicio de Sesión",
         "/registro": "MODULO - Registro de Usuario",
         "/index": "MODULO - Menu de Usuario",
         "/entradas": "MODULO - Entradas de Dinero",
+        "/salidas": "MODULO - Salidas de Dinero",
         "/soporte": "MODULO - Soporte de Aplicacion",
     }[location.pathname] || "MODULO";
 

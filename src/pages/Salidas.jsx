@@ -1,35 +1,35 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logoEntradas from "../assets/Entradas.jpg";
+import logoSalidas from "../assets/Salidas.jpg";
 import InputField from "../components/InputField";
 import Button from "../components/Button";
-import "../styles/entradas.css";
+import "../styles/salidas.css";
 
-function Entradas() {
+function Salidas() {
 
   const navigate = useNavigate();
 
   // ESTADOS
-  const [entradas, setEntradas] = useState([]);
+  const [salidas, setSalidas] = useState([]);
   const [form, setForm] = useState({
-    entrada: "",
+    salida: "",
     descripcion: "",
     valor: "",
   });
 
   const [editando, setEditando] = useState(false);
-   const [entradaId, setEntradaId] = useState(null);
+   const [salidaId, setSalidaId] = useState(null);
 
-  // OBTENER ENTRADAS
-  const obtenerEntradas = async () => {
-    try {const res = await fetch("http://localhost:8000/api/entradas");
+  // OBTENER SALIDAS
+  const obtenerSalidas = async () => {
+    try {const res = await fetch("http://localhost:8000/api/salidas");
       const data = await res.json();
-      setEntradas(data);
+      setSalidas(data);
     } catch (error) {console.error(error);}
   };
 
-  // CARGAR ENTRADAS
-  useEffect(() => {obtenerEntradas();}, []);
+  // CARGAR SALIDAS
+  useEffect(() => {obtenerSalidas();}, []);
 
   // ACTUALIZAR INPUTS
   const handleChange = (e) => {setForm({...form, [e.target.name]: e.target.value});
@@ -42,14 +42,14 @@ function Entradas() {
       const datosEnviar = {...form, valor: Number(form.valor)};
 
       // ACTUALIZAR
-      if (editando) {res = await fetch(`http://localhost:8000/api/entradas/${entradaId}`,
+      if (editando) {res = await fetch(`http://localhost:8000/api/salidas/${salidaId}`,
           {method: "PUT", headers: {"Content-Type": "application/json"},
             body: JSON.stringify(datosEnviar)}
         );
       } else {
 
         // REGISTRAR
-        res = await fetch("http://localhost:8000/api/entradas",
+        res = await fetch("http://localhost:8000/api/salidas",
           {method: "POST", headers: {"Content-Type": "application/json"},
             body: JSON.stringify(datosEnviar)}
         );
@@ -58,26 +58,26 @@ function Entradas() {
       const data = await res.json();
       if (res.ok) {alert(data.message ||
           (editando
-            ? "Entrada actualizada correctamente"
-            : "Entrada registrada correctamente")
+            ? "Salida actualizada correctamente"
+            : "Salida registrada correctamente")
         );
 
         // LIMPIAR FORMULARIO
         setForm({
-          entrada: "",
+          salida: "",
           descripcion: "",
           valor: "",
         });
 
         setEditando(false);
-        setEntradaId(null);
+        setSalidaId(null);
 
         // RECARGAR USUARIOS
-        obtenerEntradas();
+        obtenerSalidas();
 
         // REDIRECCION
         setTimeout(() => {
-          navigate("/Entradas");
+          navigate("/Salidas");
         }, 1500);
 
       } else {alert(data.error || "Error en el proceso");}
@@ -87,28 +87,28 @@ function Entradas() {
     }
   };
 
-  // ELIMINAR ENTRADA
-  const eliminarEntradas = async (id) => {
+  // ELIMINAR SALIDA
+  const eliminarSalidas = async (id) => {
     const confirmar = window.confirm(
-      "¿Eliminar entrada?"
+      "¿Eliminar salida?"
     );
     if (!confirmar) return;
-    try {await fetch(`http://localhost:8000/api/entradas/${id}`,
+    try {await fetch(`http://localhost:8000/api/salidas/${id}`,
         {method: "DELETE"}
       );
-      obtenerEntradas();
+      obtenerSalidas();
     } catch (error) {console.error(error);}
   };
 
-  // EDITAR ENTRADA
-  const editarEntradas = (entrada) => {
+  // EDITAR SALIDA
+  const editarSalidas = (salida) => {
     setForm({
-      entrada: entrada.entrada,
-      descripcion: entrada.descripcion,
-      valor: entrada.valor,
+      salida: salida.salida,
+      descripcion: salida.descripcion,
+      valor: salida.valor,
     });
 
-    setEntradaId(entrada._id);
+    setSalidaId(salida._id);
     setEditando(true);
     window.scrollTo({
       top: 0,
@@ -116,29 +116,29 @@ function Entradas() {
     });
   };
 
- // SUMATORIA DE ENTRADAS
-  const totalEntradas = entradas.reduce((acc, item) => {
+  // SUMATORIA DE SALIDAS
+  const totalSalidas = salidas.reduce((acc, item) => {
     return acc + Number(item.valor);
   }, 0);
 
   return (
-    <div className="containerEntradas">
+    <div className="containerSalidas">
 
       {/* IMAGEN */}
       <div className="col">
-        <img src={logoEntradas} alt="Logo" className="logoEntradas"/>
+        <img src={logoSalidas} alt="Logo" className="logoSalidas"/>
       </div>
 
       {/* FORMULARIO */}
       <div className="card">
         <form onSubmit={handleSubmit}>
           <InputField
-            label="Entrada :"
+            label="Salida :"
             type="text"
-            name="entrada"
-            value={form.entrada}
+            name="salida"
+            value={form.salida}
             onChange={handleChange}
-            placeholder="Ingrese nombre entrada"
+            placeholder="Ingrese nombre salida"
           />
           <InputField
             label="Descripcion :"
@@ -162,25 +162,25 @@ function Entradas() {
             type="submit"
             text={
               editando
-                ? "Actualizar Entrada"
-                : "Registrar Entrada"
+                ? "Actualizar Salida"
+                : "Registrar Salida"
             }/>
         </form>
       </div>
 
-      {/* LISTADO DE ENTRADAS */}
+      {/* LISTADO DE SALIDAS */}
       <div className="entradas-container">
-        <h3>Entradas Registradas: $ {totalEntradas}</h3>
-        {entradas.map((entrada) => (
+        <h3>Salidas Registradas: $ {totalSalidas}</h3>
+        {salidas.map((salida) => (
           <div
-              key={entrada._id}
-              className="card-entradas"
-            ><div>{entrada.entrada} : {entrada.descripcion} : {entrada.valor}</div>
+              key={salida._id}
+              className="card-salidas"
+            ><div>{salida.salida} : {salida.descripcion} : {salida.valor}</div>
             <button className="btn-editar"
-                onClick={() => editarEntradas(entrada)}
+                onClick={() => editarSalidas(salida)}
                 >Editar</button>
             <button className="btn-eliminar"
-                onClick={() => eliminarEntradas(entrada._id)}
+                onClick={() => eliminarSalidas(salida._id)}
                 >Eliminar</button>
           </div>
         ))}
@@ -189,4 +189,4 @@ function Entradas() {
   );
 }
 
-export default Entradas;
+export default Salidas;
