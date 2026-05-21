@@ -11,6 +11,7 @@ function Navbar () {
         "/login": "MODULO - Inicio de Sesión",
         "/registro": "MODULO - Registro de Usuario",
         "/index": "MODULO - Menu de Usuario",
+        "/entradas": "MODULO - Entradas de Dinero",
         "/soporte": "MODULO - Soporte de Aplicacion",
     }[location.pathname] || "MODULO";
 

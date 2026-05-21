@@ -1,22 +1,23 @@
-.containerRegistro {
+.containerEntradas {
   display: flex;
   align-items: center;  /* centra verticalmente */
-  padding: 1.43% 2%;
+  padding: 2.85% 2%;
 }
-.containerRegistro img {
+.containerEntradas img {
   flex: 1;
   width: 110%;
   height: auto;
+  border-radius: 40px;
 }
-.containerRegistro div {
+.containerEntradas div {
   flex: 1;
   padding: 1%;
   justify-content: right
 }
-.usuarios-container{
+.entradas-container{
   flex: 1;
 }
-.card-user{
+.card-entradas{
   background: rgba(255, 255, 255, 0.856);
   margin: 5px 0;
   border-radius: 40px;
@@ -39,4 +40,3 @@
   border-radius: 10px;
   cursor: pointer;
 }
-
