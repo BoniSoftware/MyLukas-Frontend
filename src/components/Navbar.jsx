@@ -25,12 +25,12 @@ function Navbar () {
                 </NavLink>
                 <NavLink 
                     to="/login"
-                    className={({ isActive }) => isActive ? "btn-dark active" : "btn-dark"}
+                    className={({ isActive }) => isActive ? "btn-outline active" : "btn-outline"}
                 >Login
                 </NavLink>
                 <NavLink 
                     to="/soporte"
-                    className={({ isActive }) => isActive ? "btn-dark active" : "btn-dark"}
+                    className={({ isActive }) => isActive ? "btn-outline active" : "btn-outline"}
                 >Soporte
                 </NavLink>
             </div>

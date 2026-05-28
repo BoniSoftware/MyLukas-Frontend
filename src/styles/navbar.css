@@ -14,41 +14,25 @@
 }
 .btn-outline {
     padding: 8px 18px;
-    border-radius: 25px;
-    border: 1.5px solid #000000;
-    background-color: transparent;
     color: #000000;
-    cursor: grab;
-    transition: all 0.3s ease;
-}
-.btn-outline:hover {
     background-color: #ccc;
-    color: #000000;
-}
-.btn-dark  {
-    padding: 8px 18px;
-    border-radius: 25px;
     border: 1.5px solid #000000;
-    background-color: transparent;
-    color: #000000;
     cursor: grab;
-    transition: all 0.3s ease;
-}
-.btn-dark:hover {
-    background-color: #ccc;
-    color: #000000;
-}
-.Usuario {
-  width: 45px;
-  height: 45px;
-}
-.brand  {
-    font-size: 18px;
-    font-weight: 600;
+    transition: all 0.3s ease; 
+    border-radius: 40px;
 }
 .active {
   background-color: rgb(19, 247, 140);
   color: #000000;
   border: 2px solid rgb(19, 247, 140);
   cursor: default;
+}
+.Usuario {
+  width: 45px;
+  height: 45px;
+  border-radius: 40px;
+}
+.brand  {
+    font-size: 18px;
+    font-weight: 600;
 }
