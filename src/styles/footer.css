@@ -4,6 +4,7 @@ footer {
     background-color: rgb(19, 247, 140); 
     padding-left: 1%;
     padding-right: 1%;
+    border-radius: 30px;
 } 
 footer div {
   text-align: right;
