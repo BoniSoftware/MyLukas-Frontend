@@ -6,8 +6,8 @@ import img1 from "../assets/Entradas.jpg";
 import img2 from "../assets/Salidas.jpg";
 import img3 from "../assets/Pagos.jpg";
 import img4 from "../assets/Calendario.jpg";
-import img5 from "../assets/Login2.jpg";
-import img6 from "../assets/Login2.jpg";
+import img5 from "../assets/Admin.jpg";
+import img6 from "../assets/Admin.jpg";
 
 function Indexcarrusel() {
   const navigate = useNavigate();

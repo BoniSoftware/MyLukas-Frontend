@@ -46,7 +46,7 @@ function Login() {
 
         // Redirigir
         setTimeout(() => {
-          navigate("/Index");
+          navigate("/index");
         }, 1500);
       } else {
         alert(data.error || "Error de login");
